@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "name": "ecommerce-service",
+  "port": 8080,
+  "cache_ttl": "3600s",
+  "timeout": "3s",
+  "host": [
+    "http://localhost"
+  ],
+  "endpoints": [
+    {
+      "endpoint": "/api/v1/product",
+      "timeout": "800ms",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/api/v1/product",
+          "encoding": "json",
+          "host": [
+            "http://localhost:8069"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/v1/product",
+      "timeout": "800ms",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/api/v1/product",
+          "encoding": "json",
+          "host": [
+            "http://localhost:8069"
+          ]
+        }
+      ]
+    }
+  ]
+}
