@@ -19,6 +19,12 @@
   version = "0.5"
 
 [[projects]]
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/gin-contrib/sse"
   packages = ["."]
@@ -59,10 +65,25 @@
   revision = "98c5dad5d1a0e8a73845ecc8897d0bd56586511d"
 
 [[projects]]
+  name = "gopkg.in/gin-contrib/cors.v1"
+  packages = ["."]
+  revision = "cf4846e6a636a76237a28d9286f163c132e841bc"
+  version = "v1.2"
+
+[[projects]]
   name = "gopkg.in/go-playground/validator.v8"
   packages = ["."]
   revision = "5f1438d3fca68893a817e4a66806cea46a9e4ebf"
   version = "v8.18.2"
+
+[[projects]]
+  branch = "v2"
+  name = "gopkg.in/mgo.v2"
+  packages = [
+    "bson",
+    "internal/json"
+  ]
+  revision = "9856a29383ce1c59f308dd1cf0363a79b5bef6b5"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"
@@ -73,6 +94,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "39bef41a27ed0aedf24851ae3d440a4535bf8e350fe065982f8f89f8a563a306"
+  inputs-digest = "09f26cae073bb304b334d0d32481c4fec43255f3e14c666583ebd928694bbea3"
   solver-name = "gps-cdcl"
   solver-version = 1

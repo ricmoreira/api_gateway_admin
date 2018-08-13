@@ -18,7 +18,7 @@ cover: test
 	go tool cover -html=coverage-all.out
 
 run:
-	go run main.go
+	go run main.go -c={{path_to_configuration_file}}}configuration.json
 
 build: clean
 	go build ${LDFLAGS} -a -o main main.go

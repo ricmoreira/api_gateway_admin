@@ -26,6 +26,10 @@
       "endpoint": "/api/v1/product",
       "timeout": "800ms",
       "method": "GET",
+      "querystring_params": [
+        "page",
+        "per_page"
+      ],
       "backend": [
         {
           "url_pattern": "/api/v1/product",
