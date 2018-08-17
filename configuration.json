@@ -2,8 +2,8 @@
   "version": 2,
   "name": "ecommerce-service",
   "port": 8080,
-  "cache_ttl": "3600s",
-  "timeout": "3s",
+  "cache_ttl": "1s",
+  "timeout": "10s",
   "host": [
     "http://localhost"
   ],
@@ -15,7 +15,6 @@
       "backend": [
         {
           "url_pattern": "/api/v1/product",
-          "encoding": "json",
           "host": [
             "http://localhost:8069"
           ]
@@ -33,9 +32,25 @@
       "backend": [
         {
           "url_pattern": "/api/v1/product",
-          "encoding": "json",
           "host": [
             "http://localhost:8069"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/v1/saft/upload",
+      "timeout": "800ms",
+      "method": "POST",
+      "headers_to_pass": [
+        "content-type",
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/saft/upload",
+          "host": [
+            "http://localhost:8099"
           ]
         }
       ]

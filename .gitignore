@@ -5,3 +5,4 @@ debug.test
 coverage-all.out
 coverage.out
 node_modules/
+*launch.json
