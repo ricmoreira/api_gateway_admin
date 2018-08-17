@@ -9,6 +9,39 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// JwtCheck returns a JWT handler that verifies a valid Bearer Authorization
+func JwtCheck() gin.HandlerFunc {
+	return jwtCheck
+}
+
+func jwtCheck(c *gin.Context) {
+	jwtToken, err := extractBearerToken(c.GetHeader("Authorization"))
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest, UnsignedResponse{
+			Message: err.Error(),
+		})
+		return
+	}
+
+	token, err := parseToken(jwtToken)
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest, UnsignedResponse{
+			Message: "bad jwt token",
+		})
+		return
+	}
+
+	_, OK := token.Claims.(jwt.MapClaims)
+	if !OK {
+		c.AbortWithStatusJSON(http.StatusInternalServerError, UnsignedResponse{
+			Message: "unable to parse claims",
+		})
+		return
+	}
+	c.Next()
+}
+
+
 type UnsignedResponse struct {
 	Message interface{} `json:"message"`
 }
@@ -39,33 +72,6 @@ func parseToken(jwtToken string) (*jwt.Token, error) {
 	}
 
 	return token, nil
-}
-
-func jwtCheck(c *gin.Context) {
-	jwtToken, err := extractBearerToken(c.GetHeader("Authorization"))
-	if err != nil {
-		c.AbortWithStatusJSON(http.StatusBadRequest, UnsignedResponse{
-			Message: err.Error(),
-		})
-		return
-	}
-
-	token, err := parseToken(jwtToken)
-	if err != nil {
-		c.AbortWithStatusJSON(http.StatusBadRequest, UnsignedResponse{
-			Message: "bad jwt token",
-		})
-		return
-	}
-
-	_, OK := token.Claims.(jwt.MapClaims)
-	if !OK {
-		c.AbortWithStatusJSON(http.StatusInternalServerError, UnsignedResponse{
-			Message: "unable to parse claims",
-		})
-		return
-	}
-	c.Next()
 }
 
 func aclCheck(c *gin.Context) {
@@ -110,9 +116,4 @@ func aclCheck(c *gin.Context) {
 	}
 
 	c.Next()
-}
-
-
-func JwtCheck() gin.HandlerFunc {
-	return jwtCheck
 }
