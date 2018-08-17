@@ -7,6 +7,32 @@
   "host": [
     "http://localhost"
   ],
+  "extra_config": {
+    "github_com/devopsfaith/krakend-cors": {
+      "allow_origins": [ "http://localhost:4200", "http://127.0.0.1:4200", "http://localhost:8089", "http://localhost:8069", "http://localhost:8080", "http://localhost:8099" ],
+      "allow_methods": [ "PUT", "PATCH", "POST", "GET", "DELETE", "OPTIONS"],
+      "allow_heathers": [ "Accept-Encoding",
+        "Accept-Language",
+        "access-control-allow-origin",
+        "Access-Control-Request-Headers",
+        "Access-Control-Request-Method",
+        "authorization",
+        "Cache-Control",
+        "Connection",
+        "Content-Type",
+        "Host",
+        "If-Modified-Since",
+        "Keep-Alive",
+        "Key",
+        "Origin",
+        "Pragma",
+        "User-Agent",
+        "X-Custom-Header"],
+      "max_age": "48h",
+      "allow_credentials": true,
+      "expose_headers": ["Content-Length", "Content-Type"]
+    }
+  },
   "endpoints": [
     {
       "endpoint": "/api/v1/product",
@@ -19,7 +45,8 @@
             "http://localhost:8069"
           ]
         }
-      ]
+      ],
+      "output_encoding": "NoTransformRender"
     },
     {
       "endpoint": "/api/v1/product",
@@ -36,7 +63,8 @@
             "http://localhost:8069"
           ]
         }
-      ]
+      ],
+      "output_encoding": "NoTransformRender"
     },
     {
       "endpoint": "/api/v1/saft/upload",
@@ -53,7 +81,8 @@
             "http://localhost:8099"
           ]
         }
-      ]
+      ],
+      "output_encoding": "NoTransformRender"
     }
   ]
 }

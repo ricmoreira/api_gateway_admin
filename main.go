@@ -6,10 +6,10 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"time"
+//	"time"
 
 	"github.com/gin-gonic/gin"
-	"gopkg.in/gin-contrib/cors.v1"
+//	"gopkg.in/gin-contrib/cors.v1"
 
 	"api_gateway_admin/middleware"
 
@@ -49,10 +49,10 @@ func main() {
 	krakendgin.RegisterRender("NoTransformRender", noTransformRender)
 
 	// assign NoTransformRender to all endpoints loaded from config file
-	for _, v := range serviceConfig.Endpoints {
+/*	for _, v := range serviceConfig.Endpoints {
 		v.OutputEncoding = "NoTransformRender"
 	}
-
+*/
 	serviceConfig.Debug = serviceConfig.Debug || *debug
 	if *port != 0 {
 		serviceConfig.Port = *port
@@ -90,31 +90,6 @@ func main() {
 		Logger:         logger,
 		HandlerFactory: krakendgin.EndpointHandler,
 		Middlewares: []gin.HandlerFunc{
-			cors.New(cors.Config{
-				AllowOrigins: []string{"http://localhost:4200", "http://127.0.0.1:4200", "http://localhost:8089", "http://localhost:8069", "http://localhost:8080", "http://localhost:8099"},
-				AllowMethods: []string{"PUT", "PATCH", "POST", "GET", "DELETE", "OPTIONS"},
-				AllowHeaders: []string{"Accept",
-					"Accept-Encoding",
-					"Accept-Language",
-					"access-control-allow-origin",
-					"Access-Control-Request-Headers",
-					"Access-Control-Request-Method",
-					"authorization",
-					"Cache-Control",
-					"Connection",
-					"Content-Type",
-					"Host",
-					"If-Modified-Since",
-					"Keep-Alive",
-					"Key",
-					"Origin",
-					"Pragma",
-					"User-Agent",
-					"X-Custom-Header"},
-				ExposeHeaders:    []string{"Content-Length", "Content-Type"},
-				AllowCredentials: true,
-				MaxAge:           48 * time.Hour,
-			}),
 			middleware.JwtCheck(),
 		},
 	}
