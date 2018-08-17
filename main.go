@@ -10,7 +10,6 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"api_gateway_admin/middleware"
-
 	"github.com/devopsfaith/krakend/config"
 	"github.com/devopsfaith/krakend/logging"
 	"github.com/devopsfaith/krakend/proxy"
@@ -83,6 +82,7 @@ func main() {
 		Logger:         logger,
 		HandlerFactory: krakendgin.EndpointHandler,
 		Middlewares: []gin.HandlerFunc{
+			middleware.Cors(),
 			middleware.JwtCheck(),
 		},
 	}
