@@ -6,10 +6,8 @@ import (
 	"log"
 	"net/http"
 	"os"
-//	"time"
 
 	"github.com/gin-gonic/gin"
-//	"gopkg.in/gin-contrib/cors.v1"
 
 	"api_gateway_admin/middleware"
 
@@ -48,11 +46,6 @@ func main() {
 	// register the render at the router level
 	krakendgin.RegisterRender("NoTransformRender", noTransformRender)
 
-	// assign NoTransformRender to all endpoints loaded from config file
-/*	for _, v := range serviceConfig.Endpoints {
-		v.OutputEncoding = "NoTransformRender"
-	}
-*/
 	serviceConfig.Debug = serviceConfig.Debug || *debug
 	if *port != 0 {
 		serviceConfig.Port = *port
