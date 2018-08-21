@@ -28,7 +28,9 @@
       "method": "GET",
       "querystring_params": [
         "page",
-        "per_page"
+        "per_page",
+        "order",
+        "sort"
       ],
       "backend": [
         {
@@ -60,7 +62,9 @@
       "method": "GET",
       "querystring_params": [
         "page",
-        "per_page"
+        "per_page",
+        "order",
+        "sort"
       ],
       "backend": [
         {
@@ -92,7 +96,9 @@
       "method": "GET",
       "querystring_params": [
         "page",
-        "per_page"
+        "per_page",
+        "order",
+        "sort"
       ],
       "backend": [
         {
@@ -110,7 +116,9 @@
       "method": "GET",
       "querystring_params": [
         "page",
-        "per_page"
+        "per_page",
+        "order",
+        "sort"
       ],
       "backend": [
         {
