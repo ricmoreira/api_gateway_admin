@@ -41,6 +41,102 @@
       "output_encoding": "NoTransformRender"
     },
     {
+      "endpoint": "/api/v1/stock/movement",
+      "timeout": "800ms",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/api/v1/stock/movement",
+          "host": [
+            "http://localhost:8029"
+          ]
+        }
+      ],
+      "output_encoding": "NoTransformRender"
+    },
+    {
+      "endpoint": "/api/v1/stock/movement",
+      "timeout": "800ms",
+      "method": "GET",
+      "querystring_params": [
+        "page",
+        "per_page"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/stock/movement",
+          "host": [
+            "http://localhost:8029"
+          ]
+        }
+      ],
+      "output_encoding": "NoTransformRender"
+    },
+    {
+      "endpoint": "/api/v1/invoice",
+      "timeout": "800ms",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/api/v1/invoice",
+          "host": [
+            "http://localhost:8019"
+          ]
+        }
+      ],
+      "output_encoding": "NoTransformRender"
+    },
+    {
+      "endpoint": "/api/v1/invoice",
+      "timeout": "800ms",
+      "method": "GET",
+      "querystring_params": [
+        "page",
+        "per_page"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/invoice",
+          "host": [
+            "http://localhost:8019"
+          ]
+        }
+      ],
+      "output_encoding": "NoTransformRender"
+    },
+    {
+      "endpoint": "/api/v1/header",
+      "timeout": "800ms",
+      "method": "GET",
+      "querystring_params": [
+        "page",
+        "per_page"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/header",
+          "host": [
+            "http://localhost:8009"
+          ]
+        }
+      ],
+      "output_encoding": "NoTransformRender"
+    },
+    {
+      "endpoint": "/api/v1/header/{TaxRegistrationNumber}",
+      "timeout": "800ms",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/api/v1/header/{TaxRegistrationNumber}",
+          "host": [
+            "http://localhost:8009"
+          ]
+        }
+      ],
+      "output_encoding": "NoTransformRender"
+    },
+    {
       "endpoint": "/api/v1/saft/upload",
       "timeout": "800ms",
       "method": "POST",
