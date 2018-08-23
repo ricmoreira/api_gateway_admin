@@ -30,7 +30,11 @@
         "page",
         "per_page",
         "order",
-        "sort"
+        "sort",
+        "ProductNumberCode",
+        "ProductCode",
+        "ProductDescription",
+        "_id"
       ],
       "backend": [
         {
@@ -64,7 +68,11 @@
         "page",
         "per_page",
         "order",
-        "sort"
+        "sort",
+        "MovementType",
+        "DocumentID",
+        "ProductCode",
+        "_id"
       ],
       "backend": [
         {
@@ -98,7 +106,10 @@
         "page",
         "per_page",
         "order",
-        "sort"
+        "sort",
+        "InvoiceNo",
+        "MovementStartTime",
+        "_id"
       ],
       "backend": [
         {
