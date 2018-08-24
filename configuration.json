@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "ecommerce-service",
+  "name": "admin-service",
   "port": 8080,
   "cache_ttl": "1s",
   "timeout": "10s",

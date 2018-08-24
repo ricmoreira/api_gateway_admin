@@ -1,11 +1,11 @@
-# ecommerce-service
-API Gateway for ecommerce UI
+# admin-service
+API Gateway for ADMIN UI
 
 # Requirements
 [Go v1.9 or upper](https://golang.org/doc/install)
 
 # Dependencies
-Packages of *ecommerce-service* are managed using dep
+Packages of *admin-service* are managed using dep
 
 To install dep on a linux OS environment run
 ```
@@ -24,7 +24,7 @@ $ dep ensure                                # Install all packages and dependenc
 
 
 # Environment Variables
-*ecommerce-service* uses Environment Variables(EV) to load some configurations
+*admin-service* uses Environment Variables(EV) to load some configurations
 prior ro run the application, these EV should be provided to the environment, e.g.: 
 
 ```
