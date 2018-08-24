@@ -85,6 +85,27 @@
       "output_encoding": "NoTransformRender"
     },
     {
+      "endpoint": "/api/v1/stock/count",
+      "timeout": "800ms",
+      "method": "GET",
+      "querystring_params": [
+        "page",
+        "per_page",
+        "order",
+        "sort",
+        "ProductCode"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/stock/count",
+          "host": [
+            "http://localhost:8029"
+          ]
+        }
+      ],
+      "output_encoding": "NoTransformRender"
+    },
+    {
       "endpoint": "/api/v1/invoice",
       "timeout": "800ms",
       "method": "POST",
